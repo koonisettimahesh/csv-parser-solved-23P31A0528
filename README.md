@@ -1,141 +1,52 @@
 # Custom CSV Reader & Writer
 
-This project implements a **custom CSV parser** in Python, including:
+## Overview & Objective
 
-* `CustomCsvReader` — a line-by-line CSV reader.
-* `CustomCsvWriter` — a writer for generating valid CSV files.
-* A **benchmark script** comparing performance with Python’s built-in `csv` module.
+This project implements a **custom CSV (Comma-Separated Values) reader and writer from scratch in Python**. The goal is to understand the low-level mechanics of CSV parsing and serialization, a fundamental skill for data engineers working with diverse text-based datasets, including non-standard or malformed files.
 
-The goal is to correctly parse and generate CSV files, including tricky edge cases such as quotes, commas inside fields, and newline characters.
+By building your own parser, you will:
 
----
+- Learn **file I/O**, **string manipulation**, and **state-based parsing**.
+- Understand how standard libraries like Python's `csv` module handle complex CSV data.
+- Handle common edge cases, including:
+  - Fields with commas
+  - Quoted fields
+  - Escaped quotes (`""`)
+  - Newlines inside quoted fields
 
-## 📌 Project Structure
-
-```
-.
-├── custom_csv.py          # Custom reader & writer implementation
-├── benchmark.py           # Benchmark script
-├── requirements.txt       # Required dependencies
-├── tests/
-│   └── test_custom_csv.py # Optional local tests (not required by evaluators)
-└── README.md
-```
+The project also includes **benchmarking** to measure read and write performance against Python’s standard CSV library, using a dataset with 10,000+ rows.
 
 ---
 
-## 🚀 Setup Instructions
+## Core Features
 
-### 1. Clone the repository
+### Reader (`CustomCsvReader`)
 
-```bash
-git clone https://github.com/<your-username>/<your-repo-name>.git
-cd <your-repo-name>
-```
+- Implemented as an **iterator class** (`__iter__` and `__next__`).
+- Reads CSV files **line by line**, without loading the entire file into memory.
+- Correctly parses:
+  - Comma-delimited fields
+  - Quoted fields
+  - Escaped double quotes
+  - Newlines inside quoted fields
 
-### 2. Create and activate a virtual environment (recommended)
+### Writer (`CustomCsvWriter`)
 
-```bash
-python -m venv venv
-source venv/bin/activate      # Mac/Linux
-venv\Scripts\activate         # Windows
-```
+- Implemented as a **class** that writes a list of lists to CSV.
+- Automatically quotes fields containing commas, quotes, or newlines.
+- Escapes internal quotes correctly by doubling them (`""`).
 
-### 3. Install dependencies
+### Benchmarking
 
-```bash
-pip install -r requirements.txt
-```
-
----
-
-## 🧩 Usage Examples
-
-### **Reading CSV using CustomCsvReader**
-
-```python
-from custom_csv import CustomCsvReader
-
-reader = CustomCsvReader("sample.csv")
-
-for row in reader:
-    print(row)
-```
-
-### **Writing CSV using CustomCsvWriter**
-
-```python
-from custom_csv import CustomCsvWriter
-
-data = [
-    ["Name", "Age", "City"],
-    ["Alice", "30", "New York"],
-    ["Bob", "25", "San Francisco"]
-]
-
-writer = CustomCsvWriter("output.csv")
-writer.write_rows(data)
-```
+- Compares performance of custom reader/writer against Python’s built-in `csv.reader` and `csv.writer`.
+- Uses a synthetically generated CSV with 10,000+ rows and 5 columns.
+- Presents and analyzes results in a clear, reproducible manner.
 
 ---
 
-## 📊 Benchmark
+## Expected Outcomes
 
-Run the benchmark script:
-
-```bash
-python benchmark.py
-```
-
-This will:
-
-* Compare the performance of **CustomCsvReader** with Python's built-in `csv.reader`.
-* Print the results for reading and writing operations.
-* Use the same dataset for fair comparison.
-
-### Example Output (sample)
-
-```
-Built-in csv.reader: 0.0123 seconds
-CustomCsvReader:     0.0189 seconds
-
-Built-in csv.writer: 0.0091 seconds
-CustomCsvWriter:     0.0142 seconds
-```
-
----
-
-## 📝 Benchmark Analysis
-
-In most cases:
-
-* **Python’s built-in CSV library is faster** because it is optimized in C.
-* The **custom implementation is slower**, as expected, but provides full control and demonstrates parsing logic.
-* Performance depends on:
-
-  * File size
-  * Quoting complexity
-  * Field sizes
-  * Number of rows
-
-This analysis is included as part of the submission requirements.
-
----
-
-## ✔️ Evaluation Notes
-
-This project satisfies all requirements:
-
-* **Functionality & correctness:**
-  The parser handles commas, quotes, escaped quotes, and newlines inside fields.
-
-* **Code quality:**
-  Follows PEP 8, uses context managers, and separates logic cleanly.
-
-* **Benchmark included:**
-  A reproducible benchmark script (`benchmark.py`) is provided.
-
-* **Documentation:**
-  This README explains setup, usage, benchmarking, and includes all required details.
-
----
+- A **working Python module** with `CustomCsvReader` and `CustomCsvWriter`.
+- Correct parsing and writing of CSV files, including all edge cases.
+- **Benchmark results** demonstrating performance differences with Python’s standard library.
+- Clean, well-structured, and well-documented code adhering to **PEP 8**.
