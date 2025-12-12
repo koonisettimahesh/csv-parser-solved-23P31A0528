@@ -1,0 +1,12 @@
+name,age,city,notes
+Mahesh,21,Hyderabad,"Loves coding, reading books"
+"Raju, Kumar",25,Delhi,"Works at ""TechCorp"", enjoys cricket"
+Sneha,30,Mumbai,"This field
+contains a newline"
+,19,Bangalore,"Has empty name"
+"  Trim Test  ",22,Chennai," Has leading and trailing spaces "
+"Quote Test",27,Kolkata,"He said ""Hello!"" yesterday"
+"Comma, Quote, Newline",33,"Pune, Maharashtra","This description
+spans multiple
+lines and includes a ""quote"" and a comma, see?"
+Simple,40,Goa,
