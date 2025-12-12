@@ -82,7 +82,7 @@ These instructions guide you to set up the environment and test the implementati
 
 ---
 
-### 1️⃣ Clone the Repository
+### 1.Clone the Repository
 
 ```bash
 git clone https://github.com/<your-username>/csv-parser-solved-23P31A0528.git
@@ -91,7 +91,7 @@ cd csv-parser-solved-23P31A0528
 
 ---
 
-### 2️⃣ Create and Activate a Python Virtual Environment
+### 2.Create and Activate a Python Virtual Environment
 
 ```bash
 # Mac/Linux
@@ -105,7 +105,7 @@ venv\Scripts\activate
 
 ---
 
-### 3️⃣ Install Dependencies
+### 3.Install Dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -115,7 +115,7 @@ pip install -r requirements.txt
 
 ---
 
-### 4️⃣ Accessing the Custom CSV Reader and Writer
+### 4.Accessing the Custom CSV Reader and Writer
 
 Your test suite can use the classes **directly from `custom_csv.py`**:
 
@@ -128,7 +128,7 @@ from custom_csv import CustomCsvReader, CustomCsvWriter
 
 ---
 
-### 5️⃣ Testing Your Own CSV Files
+### 5.Testing Your Own CSV Files
 
 #### Using `CustomCsvReader`:
 
@@ -167,7 +167,7 @@ with open("output_file.csv", "w", encoding="utf-8", newline="") as f:
 
 ---
 
-### 6️⃣ Running Benchmarks (Optional)
+### 6.Running Benchmarks (Optional)
 
 ```bash
 python benchmark.py
@@ -179,7 +179,7 @@ python benchmark.py
 
 ---
 
-### 7️⃣ Notes for Evaluators
+### 7.Notes for Evaluators
 
 * Replace `"your_test_file.csv"` with any file from your test suite.
 * Always open files with `newline=""` when reading/writing to handle cross-platform newlines correctly.
@@ -190,13 +190,13 @@ python benchmark.py
 ```
 
 ````markdown
-## 🧩 Usage Examples
+## Usage Examples
 
 These examples demonstrate how to use `CustomCsvReader` and `CustomCsvWriter` with any CSV file, including tricky edge cases.
 
 ---
 
-### 1️⃣ Reading CSV using CustomCsvReader
+### 1.Reading CSV using CustomCsvReader
 
 ```python
 from custom_csv import CustomCsvReader
@@ -234,7 +234,7 @@ Line2"
 
 ---
 
-### 2️⃣ Writing CSV using CustomCsvWriter
+### 2.Writing CSV using CustomCsvWriter
 
 ```python
 from custom_csv import CustomCsvWriter
@@ -268,7 +268,7 @@ Line2"
 
 ---
 
-### 3️⃣ Using Your Own CSV Files
+### 3.Using Your Own CSV Files
 
 Evaluators can replace `"test.csv"` with **any CSV file from their test suite**:
 
@@ -299,7 +299,7 @@ This section demonstrates the performance of `CustomCsvReader` and `CustomCsvWri
 
 ---
 
-### 1️⃣ Running the Benchmark
+### 1.Running the Benchmark
 
 Run the benchmark script using:
 
@@ -313,7 +313,7 @@ python benchmark.py
 
 ---
 
-### 2️⃣ Example Output (Sample)
+### 2.Example Output (Sample)
 
 ```
 Generating test data...
@@ -331,7 +331,7 @@ CSV Reader Time      : 0.0123 sec
 
 ---
 
-### 3️⃣ Analysis
+### 3.Analysis
 
 * **Python’s built-in CSV library is faster** because it is implemented in C and optimized for performance.
 * **CustomCsvReader/Writer are slower**, but they provide:
@@ -348,7 +348,7 @@ CSV Reader Time      : 0.0123 sec
 
 ---
 
-### 4️⃣ Using Custom Test Files
+### 4.Using Custom Test Files
 
 Evaluators can benchmark their own CSV files by replacing the dataset generation in `benchmark.py`:
 
@@ -366,4 +366,3 @@ with open("evaluator_output.csv", "w", encoding="utf-8", newline="") as f:
 
 > This ensures that the benchmark can be **fully reproducible with any dataset**.
 
-```
