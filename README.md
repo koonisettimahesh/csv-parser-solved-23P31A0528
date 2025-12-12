@@ -50,3 +50,28 @@ The project also includes **benchmarking** to measure read and write performance
 - Correct parsing and writing of CSV files, including all edge cases.
 - **Benchmark results** demonstrating performance differences with Python’s standard library.
 - Clean, well-structured, and well-documented code adhering to **PEP 8**.
+
+
+## 📁 Project Structure
+
+```
+
+csv-parser-solved-23P31A0528/
+│
+├── README.md           # Project documentation
+├── custom_csv.py       # Implementation of CustomCsvReader & CustomCsvWriter
+├── requirements.txt    # Dependencies for the project
+├── benchmark.py        # Script to benchmark custom vs built-in CSV reader/writer
+├── test.csv            # Sample CSV file covering edge cases (quotes, commas, newlines)
+├── test_reader.py      # Script to test CustomCsvReader functionality
+└── test_writer.py      # Script to test CustomCsvWriter functionality
+
+```
+
+### Notes:
+- `custom_csv.py` contains all core classes.
+- `benchmark.py` generates large datasets and compares performance.
+- `test_reader.py` and `test_writer.py` verify correctness of your implementation.
+- `test.csv` contains diverse edge cases for testing (commas, quotes, multiline fields).
+```
+
