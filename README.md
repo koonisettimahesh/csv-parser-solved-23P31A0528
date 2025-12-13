@@ -74,21 +74,18 @@ csv-parser-solved-23P31A0528/
 - `test_reader.py` and `test_writer.py` are provided to verify the correctness of the implementation. Evaluators can replace the test file in these scripts with their own CSV files to run their own test cases.
 - `test.csv` contains diverse edge cases for testing (commas, quotes, multiline fields).
 ```
-
-````markdown
+```
 ## 🚀 Clear Instructions for Evaluators: Setup & Running the Code
 
 These instructions guide you to set up the environment and test the implementation using **your own CSV files or test suites**.
 
 ---
-
 ### 1.Clone the Repository
 
 ```bash
 git clone https://github.com/<your-username>/csv-parser-solved-23P31A0528.git
 cd csv-parser-solved-23P31A0528
-````
-
+```
 ---
 
 ### 2.Create and Activate a Python Virtual Environment
@@ -187,9 +184,6 @@ python benchmark.py
 * Works efficiently with **large files** because reading is done row by row (streaming).
 * To test your own CSV files with this implementation, **place your test files inside the repository** or provide a correct relative or absolute path when opening the file.  
 
-```
-
-````markdown
 ## Usage Examples
 
 These examples demonstrate how to use `CustomCsvReader` and `CustomCsvWriter` with any CSV file, including tricky edge cases.
@@ -206,7 +200,7 @@ with open("input.csv", "r", encoding="utf-8", newline="") as f:
     reader = CustomCsvReader(f)
     for row in reader:
         print(row)  # Each row is returned as a list of strings
-````
+```
 
 **Features handled:**
 
@@ -289,10 +283,6 @@ with open("evaluator_output.csv", "w", encoding="utf-8", newline="") as f:
 
 > ✅ These examples demonstrate full functionality and correctness, including edge cases, for both reading and writing CSV files.
 
-```
-
-```
-````markdown
 ## 📊 Benchmark
 
 This section demonstrates the performance of `CustomCsvReader` and `CustomCsvWriter` compared to Python’s built-in `csv` module.
